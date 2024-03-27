@@ -42,14 +42,41 @@ namespace fominPraktika
         {
             var login = LOGIN.Text;
             var password = PASSWORD.Text;
+            
             var context = new Appdbcontext();
             var user = context.Users.SingleOrDefault(x => x.login == login && x.password == password);
+            
             if (user is  null) 
             {
                 MessageBox.Show("Неправильный логин или пароль!");
                 return;
             }
+            
             MessageBox.Show("Вы успешно вошли в аккаунт!");
+
+            WHOD reg = new WHOD();
+            reg.Show();
+            this.Hide();
+        }
+
+        private void GLAZ_Click(object sender, RoutedEventArgs e)
+        {
+            PASSWORD.Text = passwordbox.Password;
+            passwordbox.Password = PASSWORD.Text;
+            PASSWORD.Visibility = Visibility.Visible;
+            passwordbox.PasswordChar = '*';
+            GLAZ.Visibility = Visibility.Hidden;
+            GLAZ2.Visibility = Visibility.Visible;
+
+        }
+
+        private void GLAZ2_Click(object sender, RoutedEventArgs e)
+        {
+            passwordbox.Password = PASSWORD.Text;
+            PASSWORD.Visibility = Visibility.Hidden;
+            GLAZ2.Visibility = Visibility.Hidden;
+            GLAZ.Visibility = Visibility.Visible;
+            passwordbox.Visibility = Visibility.Visible;
         }
     }
 }

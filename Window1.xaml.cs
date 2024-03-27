@@ -1,6 +1,7 @@
 ﻿using fominPraktika.classes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,7 @@ using System.Windows.Shapes;
 
 namespace fominPraktika
 {
-    /// <summary>
-    /// Логика взаимодействия для Window1.xaml
-    /// </summary>
+   
     public partial class Window1 : Window
     {
         public Window1()
@@ -36,23 +35,84 @@ namespace fominPraktika
             mainWindow.Show();
             this.Hide();
         }
-
+       
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var Login = LOGIN1.Text;
             var Pass = PASSWORD1.Text;
+            var RPASS = REPEATPASSWORD1.Text;
+            var email = EMAIL.Text;
             var context = new Appdbcontext();
             var user_exists = context.Users.FirstOrDefault(x => x.login == Login);
+          
             if (user_exists is not null)
             {
                 MessageBox.Show("Такой пользователь уже существует");
                 return;
             }
-            var user = new user { login = Login, password = Pass };
+            var user = new user { login = Login, password = Pass, email = email };
 
-            context.Users.Add(user);
-            context.SaveChanges();
-            MessageBox.Show("Welcome to the club, body");
+           
+            errorLog.Visibility = Visibility.Hidden;
+            errorPass.Visibility = Visibility.Hidden;
+            errorRpass.Visibility = Visibility.Hidden;
+            errorRpass1.Visibility = Visibility.Hidden;
+            errorRpass2.Visibility = Visibility.Hidden;
+            if (Login.Length >= 1)
+            {
+                errorLog.Text = "";
+                if (email.Contains("@") && email.Contains("."))
+                {
+                    errorEmail.Text = "";
+
+                    if (Pass.Length >= 6)
+                    {
+                        errorPass.Text = "";
+                        if (Pass.Any(Char.IsPunctuation))
+                        {
+                            errorPass1.Text = "";
+                            if (Pass == RPASS)
+                            {
+                                errorRpass2.Text = "";
+                                context.Users.Add(user);
+                                context.SaveChanges();
+                                MessageBox.Show("Welcome to the club, body");
+                            }
+                            else
+                            {
+                                errorPass2.Text = "Пароли должны совпадать";
+
+                            }
+                        }
+                        else
+                        {
+                            errorPass1.Text = "В пароле должны быть специальные символы";
+
+
+                        }
+                    }
+                    else
+                    {
+                        errorPass.Text = "Пароль должен состоять из 6 символов";
+
+
+                    }
+
+                }
+
+                else
+                {
+                    errorEmail.Text = "В почте должны содержаться @ и .";
+
+
+                }
+            }
+            else
+            {
+                errorLog.Text = "Такой логин уже существует";
+
+            }
         }
+      
     }
 }

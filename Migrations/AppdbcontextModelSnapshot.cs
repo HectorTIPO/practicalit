@@ -29,6 +29,10 @@ namespace fominPraktika.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("login")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

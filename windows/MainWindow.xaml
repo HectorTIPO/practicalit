@@ -33,18 +33,22 @@
             <RowDefinition></RowDefinition>
 
         </Grid.RowDefinitions>
-        
-        <Image Source="/images/hacker.png" Grid.Column="1" Grid.ColumnSpan="7" Grid.RowSpan="7" />
-        <TextBox Name="LOGIN" FontSize="40" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="5"></TextBox>
 
+        <Image Source="/images/hacker.png" Grid.Column="1" Grid.ColumnSpan="7" Grid.RowSpan="7" />
+        <TextBox Name="LOGIN"  FontSize="40" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="5"></TextBox>
+        <PasswordBox FontSize="40" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="5" Name="passwordbox" ></PasswordBox>
         <TextBox Name="PASSWORD" FontSize="40" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="5"></TextBox>
         <Button Name="loginButton" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" Content="Login" FontSize="60" Background="Orange" Margin="0,88,0,88" Grid.RowSpan="3" Click="loginButton_Click" ></Button>
-
-        <Button Grid.Column="7" Grid.Row="6" Background="DimGray" Width="100"></Button>
+        <Button Name="GLAZ2" Grid.Column="7" Grid.Row="6" Background="DimGray"   Click="GLAZ2_Click">
+            <Image Source="/images/lupa.png" Grid.Column="7" Grid.Row="6"></Image>
+        </Button>
+        <Button Name="GLAZ" Grid.Column="7" Grid.Row="6" Background="DimGray"  Click="GLAZ_Click">
+            <Image Source="/images/png1.png" Grid.Column="7" Grid.Row="6"></Image>
+        </Button>
         <Button Name="regBTN" Background="DimGray" Content="Не зарегистрированны? Зарегистрироваться" FontSize="35" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="5" Click="regBTN_Click" />
-        <Image Source="/images/png1.png" Grid.Column="7" Grid.Row="6"></Image>
+        
         <Image Source="/images/png2.png" Grid.Column="1" Grid.Row="4"></Image>
         <Image Source="/images/png3.png" Grid.Column="1" Grid.Row="6"></Image>
-        
+
     </Grid>
 </Window>
