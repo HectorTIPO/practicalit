@@ -35,9 +35,10 @@
         </Grid.RowDefinitions>
 
         <Image Source="/images/hacker.png" Grid.Column="1" Grid.ColumnSpan="7" Grid.RowSpan="7" />
-        <TextBox Name="LOGIN"  FontSize="40" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="5"></TextBox>
+        <TextBlock FontSize="40" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="5" Background="White"></TextBlock>
+        <TextBox Style="{StaticResource PlaceholderTextBox}"  Tag="Логин/E-Mail"   Name="LOGIN"  FontSize="40" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="5"></TextBox>
         <PasswordBox FontSize="40" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="5" Name="passwordbox" ></PasswordBox>
-        <TextBox Name="PASSWORD" FontSize="40" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="5"></TextBox>
+        <TextBox Style="{StaticResource PlaceholderTextBox}"  Tag="Пароль" Name="PASSWORD"  FontSize="40" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="5"></TextBox>
         <Button Name="loginButton" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="3" Content="Login" FontSize="60" Background="Orange" Margin="0,88,0,88" Grid.RowSpan="3" Click="loginButton_Click" ></Button>
         <Button Name="GLAZ2" Grid.Column="7" Grid.Row="6" Background="DimGray"   Click="GLAZ2_Click">
             <Image Source="/images/lupa.png" Grid.Column="7" Grid.Row="6"></Image>
@@ -46,9 +47,11 @@
             <Image Source="/images/png1.png" Grid.Column="7" Grid.Row="6"></Image>
         </Button>
         <Button Name="regBTN" Background="DimGray" Content="Не зарегистрированны? Зарегистрироваться" FontSize="35" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="5" Click="regBTN_Click" />
-        
+
         <Image Source="/images/png2.png" Grid.Column="1" Grid.Row="4"></Image>
         <Image Source="/images/png3.png" Grid.Column="1" Grid.Row="6"></Image>
 
+        <TextBlock Name="ErrorBox" Grid.Column="7" Grid.Row="3" Grid.ColumnSpan="4" Grid.RowSpan="2" FontSize="15"/>
+        <Button Click="ErrorBtn_Click" Name="ErrorBtn" Grid.Column="7" Grid.Row="4"  Content="OK" FontSize="20" Visibility="Hidden" Grid.ColumnSpan="2" Margin="89,88,89,0" Grid.RowSpan="2" />
     </Grid>
 </Window>

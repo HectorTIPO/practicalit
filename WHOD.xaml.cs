@@ -20,11 +20,35 @@ namespace fominPraktika
     /// </summary>
     public partial class WHOD : Window
     {
-        public WHOD()
+        public int _id;
+        public WHOD( int id)
         {
             InitializeComponent();
-            
+
+            _id = id;
+
+            int find = id;
+
+            var context = new Appdbcontext();
+
+            var user = context.Users.SingleOrDefault(x => x.id == id);
+
+            string Finde = user.login;
+
+           HelloUser.Text = "Здравствуйте, " + Finde + "!";
         }
-        
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+
+        private void Change_Click_1(object sender, RoutedEventArgs e)
+        {
+            lk lk = new (_id);
+            lk.Show();
+            this.Hide();
+        }
     }
 }

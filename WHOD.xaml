@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:fominPraktika"
         mc:Ignorable="d"
-        Title="WHOD" Height="450" Width="800">
+        Title="WHOD" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid Background="DimGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -24,6 +24,9 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock Name="HelloUser" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="2" TextWrapping="Wrap" FontSize="20"></TextBlock>
+        <TextBlock Name="HelloUser" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="2" TextWrapping="Wrap" FontSize="30" Foreground="White"></TextBlock>
+
+        <TextBlock Text="Личный кабинет:)" Foreground="White" Grid.ColumnSpan="3" Grid.RowSpan="2" FontSize="40"></TextBlock>
+        <Button Name="Change" Grid.Column="3" Grid.Row="2" Content="go change" Background="White" Click="Change_Click_1"  Margin="0,72,0,0" Grid.RowSpan="2"></Button>
     </Grid>
 </Window>

@@ -35,11 +35,15 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBox Name="LOGIN1" FontSize="40" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="4"></TextBox>
-        <TextBox Name="EMAIL" FontSize="40" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="4"></TextBox>
-        <TextBox Name="PASSWORD1" FontSize="40" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="4"></TextBox>
-        <TextBox Name="REPEATPASSWORD1" FontSize="40" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="4"></TextBox>
-        <Button Grid.Column="4" Grid.Row="9" Background="Orange" Grid.ColumnSpan="2" Content="Registration" FontSize="30" Click="Button_Click_1"> </Button>
+         <TextBlock  FontSize="40" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="4" Background="White"></TextBlock>
+        <TextBox Style="{StaticResource PlaceholderTextBox}"  Tag="Логин" Name="LOGIN1" FontSize="40" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="4"></TextBox>
+        <TextBlock  FontSize="40" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="4" Background="White"></TextBlock>
+        <TextBox Style="{StaticResource PlaceholderTextBox}"  Tag="E-Mail" Name="EMAIL" FontSize="40" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="4"></TextBox>
+        <TextBlock  FontSize="40" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="4" Background="White"></TextBlock>
+        <TextBox Style="{StaticResource PlaceholderTextBox}"  Tag="Пароль" Name="PASSWORD1" FontSize="40" Grid.Column="3" Grid.Row="5" Grid.ColumnSpan="4"></TextBox>
+        <TextBlock  FontSize="40" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="4" Background="White"></TextBlock>
+        <TextBox Style="{StaticResource PlaceholderTextBox}"  Tag="Повторите пароль" Name="REPEATPASSWORD1" FontSize="40" Grid.Column="3" Grid.Row="7" Grid.ColumnSpan="4"></TextBox>
+        <Button   Grid.Column="4" Grid.Row="9" Background="Orange" Grid.ColumnSpan="2" Content="Registration" FontSize="30" Click="Button_Click_1"> </Button>
         <Button Name="vhod" Background="DimGray" Content="Уже зарегистрированны? Войти" FontSize="35" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="4" Click="Button_Click" />
         <TextBlock Grid.Row="0" Grid.Column="3" Text="Login" FontSize="50"></TextBlock>
         <TextBlock Grid.Row="2" Grid.Column="3" Text="Email" FontSize="50"></TextBlock>

@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="lk.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="WHOD.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -15,6 +18,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="lk.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="WHOD.xaml">
       <SubType>Designer</SubType>
     </Page>

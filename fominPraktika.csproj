@@ -2,13 +2,14 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="images\hacker.png" />
+    <None Remove="images\lk.png" />
     <None Remove="images\lupa.png" />
     <None Remove="images\png1.png" />
     <None Remove="images\png2.png" />
@@ -27,6 +28,7 @@
 
   <ItemGroup>
     <Resource Include="images\hacker.png" />
+    <Resource Include="images\lk.png" />
     <Resource Include="images\lupa.png" />
     <Resource Include="images\png1.png" />
     <Resource Include="images\png2.png" />

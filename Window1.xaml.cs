@@ -55,9 +55,9 @@ namespace fominPraktika
            
             errorLog.Visibility = Visibility.Hidden;
             errorPass.Visibility = Visibility.Hidden;
-            errorRpass.Visibility = Visibility.Hidden;
-            errorRpass1.Visibility = Visibility.Hidden;
-            errorRpass2.Visibility = Visibility.Hidden;
+            errorPass.Visibility = Visibility.Hidden;
+            errorPass1.Visibility = Visibility.Hidden;
+            errorPass2.Visibility = Visibility.Hidden;
             if (Login.Length >= 1)
             {
                 errorLog.Text = "";
@@ -73,7 +73,7 @@ namespace fominPraktika
                             errorPass1.Text = "";
                             if (Pass == RPASS)
                             {
-                                errorRpass2.Text = "";
+                                errorPass2.Text = "";
                                 context.Users.Add(user);
                                 context.SaveChanges();
                                 MessageBox.Show("Welcome to the club, body");
@@ -81,20 +81,22 @@ namespace fominPraktika
                             else
                             {
                                 errorPass2.Text = "Пароли должны совпадать";
+                                errorPass2.Visibility = Visibility.Visible;
+                                
 
                             }
                         }
                         else
                         {
                             errorPass1.Text = "В пароле должны быть специальные символы";
-
+                            errorPass1.Visibility = Visibility.Visible;
 
                         }
                     }
                     else
                     {
                         errorPass.Text = "Пароль должен состоять из 6 символов";
-
+                        errorPass.Visibility = Visibility.Visible;
 
                     }
 
